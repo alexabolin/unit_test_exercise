@@ -18,3 +18,16 @@ def test_new_y(plane_input_1, plane_input_2, new_x, expected):
     answer = new_y(plane_input_1, plane_input_2, new_x)
     # Assert
     assert answer == expected
+
+
+@pytest.mark.parametrize("plane_input_1, plane_input_2, input_3, expected",
+                         [((0, 0), (1, 1), (0.5, 0.5), True),
+                          ((-1, -2), (1, 2), (0, 1), False),
+                          ((1, 4), (5, 6), (3, 5), True)])
+def test_true_false(plane_input_1, plane_input_2, input_3, expected):
+    from plane_line import true_false
+    # Arrange (parameters)
+    # Act
+    answer = true_false(plane_input_1, plane_input_2, input_3)
+    # Assert
+    assert answer == expected
